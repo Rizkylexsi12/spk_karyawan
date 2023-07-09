@@ -44,13 +44,16 @@
                       $no = 0;
                       foreach ($R as $i => $r) {
                           for ($j = 0; $j < $m; $j++) {
-                              $P[$i] = (isset($P[$i]) ? $P[$i] : 0) + $r[$j] * $W[$j];
+                            $P[$i] = (isset($P[$i]) ? $P[$i] : 0) + $r[$j] * $W[$j];
                           }
+                          $sql = "SELECT name FROM saw_alternatives WHERE id_alternative = $i";
+                          $result = $db->query($sql);
+                          $row = $result->fetch_object();
                           echo "<tr class='center'>
                                   <td class='text-center'>" . (++$no) . "</td>
                                   <td class='text-center'>A{$i}</td>
-                                  <td class='text-center'>A{$i}</td>
-                                  <td class='text-center'>{$P[$i]}</td>
+                                  <td class='text-center'>{$row->name}</td>
+                                  <td class='text-center nilai'><b>{$P[$i]}</b></td>
                                 </tr>";
                       }
                     ?>
