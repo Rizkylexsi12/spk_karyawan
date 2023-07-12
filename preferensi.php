@@ -38,9 +38,10 @@
                       <th class="text-center">Nama</th>
                       <th class="text-center">Hasil</th>
                     </tr>
-                    <?php
+                    <!-- <?php
                       $P = array();
                       $m = count($W);
+                      array_multisort($P, SORT_ASC);
                       $no = 0;
                       foreach ($R as $i => $r) {
                           for ($j = 0; $j < $m; $j++) {
@@ -55,6 +56,39 @@
                                   <td class='text-center'>{$row->name}</td>
                                   <td class='text-center nilai'><b>{$P[$i]}</b></td>
                                 </tr>";
+                      }
+                    ?> -->
+                    <?php
+                      // Fungsi pembanding untuk mengurutkan nilai secara ascending
+                      function compareNilai($a, $b)
+                      {
+                        return $b['nilai'] - $a['nilai'];
+                      }
+
+                      // Menyiapkan array untuk menyimpan nilai dan indeksnya
+                      $nilaiArray = array();
+                      foreach ($R as $i => $r) {
+                        $sql = "SELECT name FROM saw_alternatives WHERE id_alternative = $i";
+                        $result = $db->query($sql);
+                        $row = $result->fetch_object();
+                        $nilaiArray[] = array(
+                            'index' => $i,
+                            'name' => $row->name,
+                            'nilai' => $P[$i]
+                        );
+                      }
+                      // Mengurutkan array berdasarkan nilai secara ascending
+                      usort($nilaiArray, 'compareNilai');
+
+                      // Menampilkan nilai yang sudah terurut
+                      $no = 0;
+                      foreach ($nilaiArray as $data) {
+                        echo "<tr class='center'>
+                                  <td class='text-center'>" . (++$no) . "</td>
+                                  <td class='text-center'>A{$data['index']}</td>
+                                  <td class='text-center'>{$data['name']}</td>
+                                  <td class='text-center nilai'><b>{$data['nilai']}</b></td>
+                              </tr>";
                       }
                     ?>
                     </table>
