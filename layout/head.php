@@ -13,7 +13,8 @@
     <link rel="shortcut icon" href="assets/images/favicon-idn.ico" type="image/x-icon">
 </head>
 <?php
-session_start();
-if ($_SESSION['status'] != 'login') {
-    header('location:./login.php');
-}
+    session_start();
+    if ($_SESSION['status'] != 'login') {
+        header('location:./login.php');
+    }
+?>

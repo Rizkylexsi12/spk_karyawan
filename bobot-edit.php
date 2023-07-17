@@ -8,7 +8,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php require "layout/head.php";?>
-
     <body>
         <div id="app">
             <?php require "layout/sidebar.php";?>
@@ -59,5 +58,4 @@
         </div>
         <?php require "layout/js.php";?>
     </body>
-
 </html>

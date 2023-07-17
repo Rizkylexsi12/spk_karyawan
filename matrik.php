@@ -51,18 +51,26 @@
                     <table class="table table-striped mb-0" style="width: 1100px;margin-left: 30px;margin-right: 30px;">
                       <caption> Matrik Keputusan (X) </caption>
                         <tr>
-                          <th rowspan='2' class="text-center">Alternatif</th>
-                          <th colspan='6' class="text-center">Kriteria</th>
-                        </tr>
-                        <tr>
-                          <th class="text-center">C1</th>
-                          <th class="text-center">C2</th>
-                          <th class="text-center">C3</th>
-                          <th class="text-center">C4</th>
-                          <th class="text-center">C5</th>
+                          <th class="text-center">Nama</th>
+                            <?php
+                              $sql = "SELECT id_criteria FROM saw_criterias";
+                              $result = $db->query($sql);
+                              while($column = $result->fetch_object()){
+                                echo "<th class='text-center'>C{$column->id_criteria}</th>";
+                              }
+                            ?>
                           <th class="text-center">Action</th>
                         </tr>
                         <?php
+                          // $ambil = "SELECT id_criteria FROM saw_criterias";
+                          // $hasil = $db->query($ambil);
+                          // $idArray = array();
+
+                          // if ($hasil->num_rows > 0) {
+                          //     while ($baris = $hasil->fetch_assoc()) {
+                          //         $idArray[] = $baris['id_criteria'];
+                          //     }
+                          // }
                           $sql = "SELECT
                                     a.id_alternative,
                                     b.name,

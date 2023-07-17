@@ -59,13 +59,11 @@
                       }
                     ?> -->
                     <?php
-                      // Fungsi pembanding untuk mengurutkan nilai secara ascending
-                      function compareNilai($a, $b)
+                      function compareNilai($b, $a)
                       {
-                        return $b['nilai'] - $a['nilai'];
+                        return $a['nilai'] - $b['nilai'];
                       }
 
-                      // Menyiapkan array untuk menyimpan nilai dan indeksnya
                       $nilaiArray = array();
                       foreach ($R as $i => $r) {
                         $sql = "SELECT name FROM saw_alternatives WHERE id_alternative = $i";
@@ -74,13 +72,12 @@
                         $nilaiArray[] = array(
                             'index' => $i,
                             'name' => $row->name,
-                            'nilai' => $P[$i]
+                            'nilai' => round($P[$i], 2)
                         );
                       }
-                      // Mengurutkan array berdasarkan nilai secara ascending
+
                       usort($nilaiArray, 'compareNilai');
 
-                      // Menampilkan nilai yang sudah terurut
                       $no = 0;
                       foreach ($nilaiArray as $data) {
                         echo "<tr class='center'>

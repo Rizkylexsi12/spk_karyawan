@@ -24,11 +24,11 @@
                 <div class="card-body">
                   <p class="card-text">Pengambil keputusan memberi bobot preferensi dari setiap kriteria dengan masing-masing jenisnya (Benefit atau Cost):</p>
                 </div>
-                <div class="ml-auto">
+                <!-- <div class="ml-auto">
                   <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#inlineForm" style="margin-left: 20px;">
                     Tambah Kriteria & Bobot
                   </button>
-                </div>
+                </div> -->
                 <hr>
                 <div class="table-responsive">
                   <table class="table table-striped mb-0" style="width: 1100px;margin-left: 30px;margin-right: 30px;">
@@ -44,11 +44,11 @@
                   <?php
                     $sql = 'SELECT id_criteria,criteria,weight,attribute FROM saw_criterias';
                     $result = $db->query($sql);
-                    $i = 0;
+                    $i = 1;
                     while ($row = $result->fetch_object()) {
                         echo "<tr>
-                            <td class='text-center'>" . (++$i) . "</td>
-                            <td class='text-center'>C{$i}</td>
+                            <td class='text-center'>" . ($i++) . "</td>
+                            <td class='text-center'>C{$row->id_criteria}</td>
                             <td>{$row->criteria}</td>
                             <td class='text-center'>{$row->weight}</td>
                             <td class='text-center'>{$row->attribute}</td>
@@ -60,7 +60,7 @@
                                     </button>
                                     <div class='dropdown-menu' aria-labelled by='dropdownMenuButton'>
                                       <a class='dropdown-item' href='bobot-edit.php?id={$row->id_criteria}'>Edit</a>
-                                      <a class='dropdown-item' href='bobot-hapus.php?id={$row->id_criteria}'>Hapus</a>
+                                      <!-- <a class='dropdown-item' href='bobot-hapus.php?id={$row->id_criteria}'>Hapus</a> -->
                                     </div>
                                 </div>
                               </div>
