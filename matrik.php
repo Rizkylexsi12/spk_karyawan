@@ -26,9 +26,9 @@
                 <div class="card-content">
                   <div class="card-body pt-1">
                     <p class="card-text">
-                      Melakukan perhitungan normalisasi untuk mendapatkan matriks nilai ternormalisasi (R), dengan ketentuan : Untuk normalisai nilai, jika faktor attribute kriteria bertipe cost maka digunakan rumusan: Rij = ( min{Xij} / Xij) sedangkan jika faktor/attribute kriteria bertipe benefit maka digunakan rumusan: Rij = ( Xij/max{Xij} )
+                      Melakukan perhitungan normalisasi untuk mendapatkan matriks nilai ternormalisasi (R), dengan ketentuan : Untuk normalisasi nilai, jika atribut kriteria bertipe cost maka digunakan rumus : Rij = ( min{Xij} / Xij) , sedangkan jika atribut kriteria bertipe benefit maka digunakan rumus: Rij = ( Xij/max{Xij} )
 										</p>
-                    <p> Bobot : Sangat Baik(4) - Baik(3) - Cukup(2) - Buruk(1) </p>
+                    <p> Bobot : <b> Sangat Baik(4) - Baik(3) - Cukup(2) - Buruk(1) </b></p>
                     <p> Kriteria : </p>
                     <?php
                       $sql = "SELECT * FROM saw_criterias";
@@ -62,15 +62,6 @@
                           <th class="text-center">Action</th>
                         </tr>
                         <?php
-                          // $ambil = "SELECT id_criteria FROM saw_criterias";
-                          // $hasil = $db->query($ambil);
-                          // $idArray = array();
-
-                          // if ($hasil->num_rows > 0) {
-                          //     while ($baris = $hasil->fetch_assoc()) {
-                          //         $idArray[] = $baris['id_criteria'];
-                          //     }
-                          // }
                           $sql = "SELECT
                                     a.id_alternative,
                                     b.name,

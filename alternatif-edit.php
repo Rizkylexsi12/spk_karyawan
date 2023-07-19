@@ -28,7 +28,7 @@
                                 <div class="col">
                                     <form action="alternatif-edit-act.php" method="POST">
                                     <div class="form-group">
-                                        <label for="basicInput">Name</label>
+                                        <label for="basicInput">Nama    :</label>
                                         <input type="text" class="form-control" name="id_alternative" value="<?=$row['id_alternative'];?>" hidden>
                                         <input type="text" class="form-control" name="name" value="<?=$row['name'];?>">
                                     </div>

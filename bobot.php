@@ -22,13 +22,13 @@
             <div class="card">
               <div class="card-content">
                 <div class="card-body">
-                  <p class="card-text">Pengambil keputusan memberi bobot preferensi dari setiap kriteria dengan masing-masing jenisnya (Benefit atau Cost):</p>
+                  <p class="card-text">Pengambil keputusan memberi bobot preferensi dari setiap kriteria dengan masing-masing jenisnya (Benefit atau Cost) :</p>
                 </div>
-                <!-- <div class="ml-auto">
+                <div class="ml-auto">
                   <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#inlineForm" style="margin-left: 20px;">
                     Tambah Kriteria & Bobot
                   </button>
-                </div> -->
+                </div>
                 <hr>
                 <div class="table-responsive">
                   <table class="table table-striped mb-0" style="width: 1100px;margin-left: 30px;margin-right: 30px;">
@@ -60,7 +60,7 @@
                                     </button>
                                     <div class='dropdown-menu' aria-labelled by='dropdownMenuButton'>
                                       <a class='dropdown-item' href='bobot-edit.php?id={$row->id_criteria}'>Edit</a>
-                                      <!-- <a class='dropdown-item' href='bobot-hapus.php?id={$row->id_criteria}'>Hapus</a> -->
+                                      <a class='dropdown-item' href='bobot-hapus.php?id={$row->id_criteria}'>Hapus</a>
                                     </div>
                                 </div>
                               </div>

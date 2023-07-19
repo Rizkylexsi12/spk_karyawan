@@ -23,7 +23,7 @@
                             <div class="card-content">
                                 <div class="card-body">
                                     <p class="card-text">
-                                        Data-data mengenai kandidat yang akan dievaluasi di representasikan dalam
+                                        Data-data mengenai kandidat yang akan dievaluasi dan direpresentasikan dalam
                                         tabel berikut:
                                     </p>
                                 </div>
@@ -37,8 +37,8 @@
                                     <table class="table table-border table-striped mb-0" style="width: 1100px;margin-left: 30px;margin-right: 30px;">
                                         <caption> Tabel Alternatif (A<sub>i</sub>) </caption>
                                         <tr>
-                                            <th class="text-center">No</th>
-                                            <th class="text-center">Name</th>
+                                            <th class="text-center">No.</th>
+                                            <th class="text-center">Nama</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                         <?php
@@ -89,7 +89,7 @@
                 </div>
                 <form action="alternatif-simpan.php" method="POST">
                     <div class="modal-body">
-                        <label>Name: </label>
+                        <label>Nama : </label>
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Input Nama" class="form-control" required>
                         </div>
